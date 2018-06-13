@@ -17,3 +17,7 @@ locals {
   nat_gw                = "${ var.nat_mode == "gateway" ? true : false }"
   nat_gw_multi_az       = "${ local.nat_gw == false ? false : var.multi_az }"
 }
+
+variable "nat_instance_type" {
+  default = "t2.small"
+}

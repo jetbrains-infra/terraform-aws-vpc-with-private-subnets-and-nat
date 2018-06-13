@@ -16,11 +16,17 @@ output "subnet_rds_1" {
 output "subnet_rds_2" {
   value = "${var.rds == "true" ? join("",aws_subnet.private_rds_2.*.id) : ""}"
 }
-output "nat_ip_1" {
-  value = "${aws_eip.nat_1.public_ip}"
+output "nat_gw_ip_1" {
+  value = "${local.nat_gw ? join("", aws_eip.nat_1.*.public_ip) : ""}"
 }
-output "nat_ip_2" {
-  value = "${join("", aws_eip.nat_2.*.public_ip)}"
+output "nat_gw_ip_2" {
+  value = "${local.nat_gw_multi_az ? join("", aws_eip.nat_2.*.public_ip) : ""}"
+}
+output "nat_instance_ip_1" {
+  value = "${local.nat_instance ? join("", aws_instance.nat_1.*.public_ip) : ""}"
+}
+output "nat_instance_ip_2" {
+  value = "${local.nat_instance_multi_az ? join("", aws_instance.nat_2.*.public_ip) : ""}"
 }
 output "vpc_id" {
   value = "${aws_vpc.project.id}"

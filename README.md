@@ -4,7 +4,8 @@ Terraform module to bootstrap AWS VPC.
 Features:
 * Private and public subnets
 * Internet gateway
-* NAT gateway 
+* NAT gateway (default: `true`)
+* NAT instance (default: `false`. Read [more](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-comparison.html).)
 * MultiAZ mode for high availability (default: `false`) 
 * RDS subnets (default: `false`)
 
@@ -18,12 +19,23 @@ Networks:
 
 ## Usage
 
+Minimal setup: VPC, NAT gw, w/o rds subnets, w/o multiAZ support 
 ```
 module "project_vpc" {
-  source   = "github.com/jetbrains-infra/terraform-aws-vpc-with-private-subnets-and-nat"
-  project  = "myproject" // required
-  multi_az = false
-  rds      = false
+  source            = "github.com/jetbrains-infra/terraform-aws-vpc-with-private-subnets-and-nat"
+  project           = "myproject" // required
+}
+```
+
+All options with default values:
+```
+module "project_vpc" {
+  source            = "github.com/jetbrains-infra/terraform-aws-vpc-with-private-subnets-and-nat"
+  project           = "myproject" // required
+  multi_az          = false
+  rds               = false
+  nat_mode          = "gateway" // or "instance"
+  nat_instance_type = "t2.small"
 }
 ```
 
