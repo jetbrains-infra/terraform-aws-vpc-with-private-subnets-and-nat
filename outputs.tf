@@ -2,7 +2,7 @@ output "subnet_public_1" {
   value = "${aws_subnet.public_nat_1.id}"
 }
 output "subnet_public_2" {
-  value = "${var.multi_az == "true" ? join("",aws_subnet.public_nat_2.*.id) : ""}"
+  value = "${aws_subnet.public_nat_2.id}"
 }
 output "subnet_private_1" {
   value = "${aws_subnet.private_app_1.id}"

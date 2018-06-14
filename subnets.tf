@@ -12,8 +12,6 @@ resource "aws_subnet" "public_nat_1" {
 
 # public subnet #2 for NAT gw
 resource "aws_subnet" "public_nat_2" {
-  count = "${var.multi_az ? 1 : 0}"
-
   cidr_block = "10.0.0.16/28"
   vpc_id = "${aws_vpc.project.id}"
   availability_zone = "eu-west-1c"
