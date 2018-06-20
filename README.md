@@ -48,5 +48,9 @@ module "project_vpc" {
 * `subnet_private_2` (empty if MultiAZ mode disabled)
 * `subnet_rds_1` (empty if RDS support disabled)
 * `subnet_rds_2` (empty if RDS support disabled)
-* `nat_ip_1` 
-* `nat_ip_2` (empty if MultiAZ mode disabled)
+* `db_subnet_group` (empty if RDS support disabled)
+* `nat_gw_ip_1` 
+* `nat_gw_ip_2` (empty if MultiAZ mode disabled)
+* `nat_instance_ip_1` 
+* `nat_instance_ip_2` (empty if MultiAZ mode disabled)
+* `default_security_group` 
