@@ -18,7 +18,6 @@ resource "aws_route_table_association" "internet_for_public_1" {
 
 # allow internet access to nat #2
 resource "aws_route_table" "public_2_to_internet" {
-  count = "${var.multi_az ? 1 : 0}"
   vpc_id = "${aws_vpc.project.id}"
 
   route {
