@@ -6,6 +6,7 @@ variable "rds" {
   default = false
 }
 variable "nat_mode" {
+  // TODO allow to disable creation of any type nat
   description = "Could be 'gateway' or 'instance', read more: https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-comparison.html"
   default = "gateway"
 }
