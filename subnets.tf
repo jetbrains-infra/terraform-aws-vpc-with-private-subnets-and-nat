@@ -6,7 +6,7 @@ resource "aws_subnet" "public_nat_1" {
 
   tags {
     Name = "Nat #1"
-    Visibility = "Private"
+    Visibility = "Public"
   }
 }
 
@@ -18,7 +18,7 @@ resource "aws_subnet" "public_nat_2" {
 
   tags {
     Name = "Nat #2"
-    Visibility = "Private"
+    Visibility = "Public"
   }
 }
 
