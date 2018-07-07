@@ -4,8 +4,8 @@ resource "aws_route_table" "nat_instance_1" {
   vpc_id = "${aws_vpc.project.id}"
 
   route {
-    cidr_block     = "0.0.0.0/0"
-    instance_id    = "${aws_instance.nat_1.id}"
+    cidr_block  = "0.0.0.0/0"
+    instance_id = "${aws_instance.nat_1.id}"
   }
 
   tags {
