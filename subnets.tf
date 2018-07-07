@@ -6,7 +6,7 @@ resource "aws_subnet" "public_nat_1" {
 
   tags {
     Name = "Nat #1"
-    Visbility = "Private"
+    Visibility = "Private"
   }
 }
 
@@ -18,7 +18,7 @@ resource "aws_subnet" "public_nat_2" {
 
   tags {
     Name = "Nat #2"
-    Visbility = "Private"
+    Visibility = "Private"
   }
 }
 
@@ -31,7 +31,7 @@ resource "aws_subnet" "private_rds_1" {
 
   tags {
     Name = "RDS #1"
-    Visbility = "Private"
+    Visibility = "Private"
   }
 }
 
@@ -44,7 +44,7 @@ resource "aws_subnet" "private_rds_2" {
 
   tags {
     Name = "RDS #2"
-    Visbility = "Private"
+    Visibility = "Private"
   }
 }
 
@@ -56,7 +56,7 @@ resource "aws_subnet" "private_app_1" {
 
   tags {
     Name = "App #1"
-    Visbility = "Private"
+    Visibility = "Private"
   }
 }
 
@@ -70,6 +70,6 @@ resource "aws_subnet" "private_app_2" {
 
   tags {
     Name = "App #2"
-    Visbility = "Private"
+    Visibility = "Private"
   }
 }
